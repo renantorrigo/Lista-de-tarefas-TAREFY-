@@ -221,7 +221,7 @@ main #todo-list .todo-Counter .Counter h2 {
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    color: var(--Gray-200);
+    color: var(--Blue-Dark);
 }
 
 main #todo-list .todo-Counter .Counter .create-Counter p {
@@ -246,6 +246,7 @@ main #todo-list .none-todo {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--Blue-Dark);
 
     gap: 1rem;
 }
@@ -257,7 +258,7 @@ main #todo-list .none-todo img {
 
 
 main #todo-list .none-todo .content-none p:first-child {
-    color: var(--Gray-300);
+    color: var(--Blue-Dark);
     text-align: center;
     font-size: 1rem;
     font-style: normal;
@@ -316,16 +317,16 @@ main #todo-list .todo button {
 
     justify-content: center;
     align-items: center;
-
+color: #F2F2F2;
     background: var(--Gray-500);
     cursor: pointer;
 
-    transition: color 0.3s, background 0.3s;
+    transition: color 0.3, background 0.3s;
 }
 
 main #todo-list .todo button:hover {
     border-radius: 0.25rem;
-    background: var(--Gray-400, #fffefe);
+    background: var(--Blue-Dark, #ff0000);
 }
 
 main #todo-list .todo button:hover svg {
@@ -342,6 +343,7 @@ main #todo-list .todo button:hover svg {
 
 .checkBtn {
     display: none;
+    color: #ff0000;
 }
 
 
@@ -394,3 +396,23 @@ main #todo-list .todo button:hover svg {
 .none-todo {
     color: white;
 }
+
+/* Estilizando o rodapé */
+footer {
+    background-color: #ffffff; /* Cor de fundo */
+    color: #ff0000; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno */
+    border-top: 130px solid #000000; /* Adiciona uma borda fina na parte superior do rodapé */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Posicionamento do rodapé no final da página */
+footer {
+    position: 100% left; /* Mantém o rodapé fixo na parte inferior */
+    bottom: 0; /* Coloca o rodapé no fundo da página */
+    left: 0;
+    right: 0;
+}
+
+
+
