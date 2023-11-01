@@ -42,8 +42,27 @@ const saveToDo = (texto, horario) => {
   
     const btnDelete = document.createElement('button');
     btnDelete.classList.add('deleteBtn');
-    btnDelete.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" fill="none" ...';
+    btnDelete.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+  </svg>`;
+
+    // Adicione um evento de clique ao botão de exclusão
+    btnDelete.addEventListener('click', () => {
+      // Encontre o elemento pai (div.todo) da tarefa a ser excluída
+      const taskToDelete = btnDelete.parentElement;
+      
+      // Remova a tarefa do todoList
+      todoList.removeChild(taskToDelete);
+      
+      // Atualize as contagens
+      updateTaskCount();
+      updateCompletedTaskCount();
+      updateNoTasksSection();
+    });
+
     todos.appendChild(btnDelete);
+    
   
     todoList.appendChild(todos);
     inputTodo.value = '';
@@ -52,7 +71,7 @@ const saveToDo = (texto, horario) => {
     updateTaskCount();
   };
   
-  // Atualize o evento de envio do formulário para passar o horário
+  // Atualiza o evento de envio do formulário para passar o horário informado
   form.addEventListener('submit', (e) => {
     e.preventDefault();
   
@@ -104,7 +123,7 @@ function updateCompletedTaskCount() {
 }
 
 
-// Eventos
+// Eventos dentro do cdg
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -156,7 +175,7 @@ const task = {
     time: new Date(),
   };
 
-  // Adicione a tarefa ao array das tarefas para não perder após atualização ou fechamento do app
+  // Serve para adicionar a tarefa ao array das tarefas para não perder após atualização ou fechamento do app
   const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   tasks.push(task);
   localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -170,7 +189,7 @@ function removeExpiredTasks() {
       const taskTime = new Date(item.getAttribute('data-time'));
   
       if (currentTime - taskTime >= 24 * 60 * 60 * 1000) {
-        // A tarefa expirou, então você pode remover a tarefa
+        // Funcionalidade para informar que a tarefa expirou, então você pode remover a tarefa
         item.remove();
       }
     });
@@ -179,4 +198,5 @@ function removeExpiredTasks() {
     updateCompletedTaskCount();
     updateNoTasksSection();
   }
+  
   

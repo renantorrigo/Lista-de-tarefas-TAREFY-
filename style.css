@@ -177,6 +177,7 @@ main #todo-list {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    margin-bottom: 40px;
      
 }
 
@@ -308,8 +309,8 @@ main #todo-list .todo button svg {
 
 main #todo-list .todo button {
     display: flex;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     padding: 0.3125rem 0.34513rem 0.3125rem 0.375rem;
 
     border: none;
@@ -330,7 +331,8 @@ main #todo-list .todo button:hover {
 }
 
 main #todo-list .todo button:hover svg {
-    fill: #ff0000;
+    fill: #ffffff;
+    
 }
 
 
@@ -401,14 +403,14 @@ main #todo-list .todo button:hover svg {
 footer {
     background-color: #ffffff; /* Cor de fundo */
     color: #ff0000; /* Cor do texto */
-    padding: 10px; /* Espaçamento interno */
-    border-top: 130px solid #000000; /* Adiciona uma borda fina na parte superior do rodapé */
+    padding: 1px; /* Espaçamento interno */
+    border-top: relative solid #ffffff; /* Adiciona uma borda fina na parte superior do rodapé */
     text-align: center; /* Centraliza o texto */
 }
 
 /* Posicionamento do rodapé no final da página */
 footer {
-    position: 100% left; /* Mantém o rodapé fixo na parte inferior */
+    position: fixed; /* Mantém o rodapé fixo na parte inferior */
     bottom: 0; /* Coloca o rodapé no fundo da página */
     left: 0;
     right: 0;
